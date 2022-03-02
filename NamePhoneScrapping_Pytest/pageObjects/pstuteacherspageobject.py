@@ -8,8 +8,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class BDNewsPage:
-    div_body_xpath="//img[@src]"
+class PSTUTeachersPage:
+    div_page_xpath="//div[@class='col-md-9']/div[@class='row']/div[@class='col-md-4 wow slideInRight']"
     
     
     def __init__(self, driver):
@@ -17,6 +17,10 @@ class BDNewsPage:
         self.driver.set_window_size(1080,800)
         
         
-    def collectImages(self):
-         all_images=self.driver.find_elements(By.XPATH,self.div_body_xpath)
-         return all_images
+    def findpersonscount(self):
+        # For Text Length   
+        sleep(2)
+        self.personcount=len(self.driver.find_elements(By.XPATH,self.div_page_xpath))
+        return self.personcount
+         
+         

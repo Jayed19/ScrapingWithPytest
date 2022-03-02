@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import pytest
 from datetime import datetime
 opts=webdriver.ChromeOptions()
-opts.headless=True
+opts.headless=False
 
 
 
@@ -53,7 +53,7 @@ def browser(request):
     return request.config.getoption("--browser")
 
 
-
+''' #Report off
 ##########PyTest HTML Report #########
 # @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
@@ -70,3 +70,4 @@ def pytest_metdata(metadata):
     metadata.pop('JAVA HOME',None)
     metadata.pop('Plugins',None)
 
+'''
